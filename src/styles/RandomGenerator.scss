@@ -1,0 +1,63 @@
+@import './variables.scss';
+
+.random-gen{
+    margin: auto;
+    margin-top: 20px;
+    -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.75);
+    width: 400px;
+    height: 180px;
+    position: relative;
+    border-radius: 10px;
+}
+.random-gen h1{
+    font-size: 1.5rem;
+    margin: auto;
+    padding: 10px;
+    height: fit-content;
+    color: $text-color-1;
+}
+.generator{
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 20px;
+    bottom: 50px;
+    margin-top: 80px;
+}
+.generator{
+    height: 40px;
+}
+.generator input{
+    border: none;
+    border-radius: 5px;
+    background-color: $background-color-2;
+    padding: 10px;
+    width: 50px;
+    margin: 0px 5px;
+}
+.generator input:focus{
+    outline: none;
+}
+.generator .submit{
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    height: 100%;
+    background-color: $button-2;
+    margin-left: 10px;
+}
+.generator .submit:hover{
+    background-color: $button-2-h;
+}
+.random-gen a{
+    margin: auto;
+    position: absolute;
+    bottom: 10px;
+    font-size: 1rem;
+    transform: translate(-50%, 0%);
+}
+.random-gen a:hover{
+    color: $text-color-1;
+}

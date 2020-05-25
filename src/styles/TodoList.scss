@@ -6,22 +6,24 @@
     -moz-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.75);
     width: 400px;
-    height: 600px;
+    height: 500px;
     position: relative;
     border-radius: 10px;
 }
 .todo-list h1{
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: auto;
     margin-top: 20px;
+    padding: 10px;
     height: fit-content;
+    color: $text-color-1;
 }
 .todo-items{
     position: absolute;
     left: 10px;
     right: 10px;
     top: 20px;
-    bottom: 10px;
+    bottom: 50px;
     margin-top: 80px;
     overflow-y: scroll;
 }
@@ -90,4 +92,14 @@
 }
 .todo-input .submit:hover{
     background-color: $button-2-h;
+}
+.todo-list a{
+    margin: auto;
+    position: absolute;
+    bottom: 10px;
+    font-size: 1rem;
+    transform: translate(-50%, 0%);
+}
+.todo-list a:hover{
+    color: $text-color-1;
 }
