@@ -1,0 +1,93 @@
+@import './variables.scss';
+
+.todo-list{
+    margin: auto;
+    -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.75);
+    width: 400px;
+    height: 600px;
+    position: relative;
+    border-radius: 10px;
+}
+.todo-list h1{
+    font-size: 2rem;
+    margin: auto;
+    margin-top: 20px;
+    height: fit-content;
+}
+.todo-items{
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 20px;
+    bottom: 10px;
+    margin-top: 80px;
+    overflow-y: scroll;
+}
+.todo-item{
+    position: relative;
+    vertical-align: middle;
+    height: 30px;
+    margin: 5px 0px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.todo-item:hover p{
+    text-decoration: line-through;
+}
+.todo-item p.finished{
+    text-decoration: line-through;
+}
+.todo-item.snd{
+    background-color: $background-color-2;
+}
+.todo-item p{
+    margin: 0;
+    padding: 0;
+    left: 0;
+    right: 40px;
+    position: absolute;
+    display: inline;
+    padding: 0px 10px;
+}
+.todo-item .remove{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 0;
+    margin-left: 1em;
+    display: inline;
+    background-color: $button-1;
+    color: $text-color-4;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+.todo-item .remove:hover{
+    background-color: $button-1-h;
+}
+.todo-input{
+    height: 40px;
+}
+.todo-input input{
+    border: none;
+    border-radius: 5px;
+    background-color: $background-color-2;
+    padding: 10px;
+}
+.todo-input input:focus{
+    outline: none;
+}
+.todo-input .submit{
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    height: 100%;
+    background-color: $button-2;
+    margin-left: 10px;
+}
+.todo-input .submit:hover{
+    background-color: $button-2-h;
+}
