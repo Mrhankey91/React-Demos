@@ -40,8 +40,8 @@ class RandomGenerator extends React.Component{
                 <h1>Random Generator</h1>
                 <p className="m0 text-size-15">Your number is: {this.state.random}</p>
                 <form className="generator" onSubmit={this.onSubmit} >
-                    <input value={this.state.min} onChange={this.onMinChange} required="true" />
-                    <input value={this.state.max} onChange={this.onMaxChange} required="true" />
+                    <input value={this.state.min} onChange={this.onMinChange} required="true" inputMode="numeric" />
+                    <input value={this.state.max} onChange={this.onMaxChange} required="true" inputMode="numeric" />
                     <button className="submit">Generate</button>
                 </form>
                 <a href="https://github.com/Mrhankey91/React-Demos/tree/master/src/components/randomgen" target="blank">Source</a>

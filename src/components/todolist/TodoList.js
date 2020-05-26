@@ -36,13 +36,7 @@ class TodoList extends React.Component{
     }
 
     onComplete = (id, completed) => {
-        var index = 0;
-        for(var i=0; i < this.state.todos.length; i++){
-            if(this.state.todos[i].id === id){
-                index = i;
-                break;
-            }
-        }
+        var index = this.arrayIndex(id);
         this.setState(prevState => {
             const newTodos = [...prevState.todos];
             newTodos[index].finished = completed;
@@ -58,6 +52,46 @@ class TodoList extends React.Component{
         });
     }
 
+    arrayIndex(id){
+        var index = 0;
+        for(var i=0; i < this.state.todos.length; i++){
+            if(this.state.todos[i].id === id){
+                index = i;
+                break;
+            }
+        }
+        return index;
+    }
+
+    moveUp = (id) =>{
+        var index = this.arrayIndex(id);
+        if(index > 0){
+            var todos = this.state.todos;
+            var obj1 = this.state.todos[index];
+            var obj2 = this.state.todos[index-1];
+            todos[index-1] = obj1;
+            todos[index] = obj2;
+
+            this.setState({
+                todos: todos,
+            });
+        }
+    }
+    moveDown = (id) =>{
+        var index = this.arrayIndex(id);
+        if(index < this.state.todos.length-1){
+            var todos = this.state.todos;
+            var obj1 = this.state.todos[index];
+            var obj2 = this.state.todos[index+1];
+            todos[index+1] = obj1;
+            todos[index] = obj2;
+
+            this.setState({
+                todos: todos,
+            });
+        }
+    }
+
     render(){
         return(
             <div className="todo-list">
@@ -69,7 +103,7 @@ class TodoList extends React.Component{
                 <AddTodoItem id={this.state.id} addItem={this.addItem} />
                 <div className="todo-items">  {
                     this.state.todos.map((item, index) => (
-                        <Todo index={index} id={item.id} description={item.description} finished={item.finished} onDelete={this.onDelete} onComplete={this.onComplete} />
+                        <Todo index={index} id={item.id} description={item.description} finished={item.finished} moveUp={this.moveUp} moveDown={this.moveDown} onDelete={this.onDelete} onComplete={this.onComplete} />
                     ))
                     }
                 </div>

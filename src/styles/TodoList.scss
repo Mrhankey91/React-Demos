@@ -36,7 +36,7 @@
     cursor: pointer;
     border-radius: 5px;
 }
-.todo-item:hover p{
+.todo-item p:hover{
     text-decoration: line-through;
 }
 .todo-item p.finished{
@@ -48,11 +48,30 @@
 .todo-item p{
     margin: 0;
     padding: 0;
-    left: 0;
+    left: 40px;
     right: 40px;
     position: absolute;
     display: inline;
     padding: 0px 10px;
+}
+.todo-item .move-up, .todo-item .move-down{
+    position: absolute;
+    font-size: 0.75rem;
+    color: $text-color-1;
+    left: 0px;
+    margin: auto;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.todo-item .move-up:hover, .todo-item .move-down:hover{
+    color: $text-color-2;
+}
+.todo-item .move-up{
+    top: 0;
+}
+.todo-item .move-down{
+    bottom: 0;
 }
 .todo-item .remove{
     position: absolute;

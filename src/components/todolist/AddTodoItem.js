@@ -17,6 +17,7 @@ class AddTodoItem extends React.Component{
         this.item.description = this.state.description;
         this.item.finished = false;
         this.props.addItem(this.item);
+        this.setState({description: ""});
     }
 
     render(){
