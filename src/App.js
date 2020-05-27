@@ -3,6 +3,7 @@ import TodoList from './components/todolist/TodoList';
 import './styles/App.css';
 import RandomGenerator from './components/randomgen/RandomGenerator';
 import DropDown from './components/dropdown/DropDown';
+import Timer from './components/timer/Timer';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <TodoList />
       <RandomGenerator />
       <DropDown />
+      <Timer />
     </div>
   );
 }

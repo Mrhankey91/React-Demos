@@ -47,6 +47,7 @@
     border: 1px solid $color-4;
     overflow-x: hidden;
     overflow-y: scroll;
+    z-index: 10;
 }
 .dropdown-menu:hover .dropdown-options{
     display: block

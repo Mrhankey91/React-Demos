@@ -1,0 +1,39 @@
+@import './variables.scss';
+
+.stopwatch{
+    margin: auto;
+    -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.75);
+    width: 400px;
+    height: 180px;
+    position: relative;
+    border-radius: 10px;
+}
+.stopwatch h1{
+    font-size: 1.5rem;
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+    height: fit-content;
+    color: $text-color-1;
+}
+.stopwatch .time{
+    font-size: 3rem;
+    margin: 10px;
+    font-family: monospace;
+}
+.stopwatch .time span{
+    font-size: 1.5rem;
+}
+.stopwatch button{
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: $button-2;
+    margin: 0px 5px;
+    cursor: pointer;
+}
+.stopwatch button:hover{
+    background-color: $button-2-h;
+}
