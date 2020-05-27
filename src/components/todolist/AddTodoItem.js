@@ -23,7 +23,7 @@ class AddTodoItem extends React.Component{
     render(){
         return(
             <div>
-                <form className="todo-input" onSubmit={this.onSubmit} >
+                <form className="todo-input" onSubmit={(event) => this.onSubmit(event)} >
                     <input value={this.state.description} onChange={this.onChange} required="true"/>
                     <button className="submit">Submit</button>
                 </form>

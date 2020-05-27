@@ -2,6 +2,7 @@ import React from 'react';
 import Todo from './Todo';
 import AddTodoItem from './AddTodoItem';
 import '../../styles/TodoList.scss';
+import uuid from "uuid/v4";
 
 class TodoList extends React.Component{
     constructor(props){
@@ -9,30 +10,25 @@ class TodoList extends React.Component{
         this.state = {
             id: 0,
             description: "",
-            todos: []
+            todos: [],
         }
         this.addItem = this.addItem.bind(this);
+    }
+
+    componentDidMount() {
+        try{
+        const todos = localStorage.getItem("todos");
+        if (todos) 
+            this.setState({ todos: JSON.parse(todos) });
+        }catch(event){}
     }
 
     onChange = (event) => {
         this.setState({ description: event.target.value });
     }
 
-    onSubmit = (event) => {
-        event.preventDefault();
-        this.setState(state => {
-            const todos = [...state.todos, state.description, state.id];
-       
-            return {
-              todos,
-              description: "",
-              id: state.id+1
-            };
-        })
-    }
-
     onDelete = (id) => { 
-        this.setState({todos: this.state.todos.filter(item => item.id !== id)});
+        this.setState({todos: this.state.todos.filter(item => item.id !== id)}, () => {localStorage.setItem("todos", JSON.stringify(this.state.todos))});
     }
 
     onComplete = (id, completed) => {
@@ -45,11 +41,14 @@ class TodoList extends React.Component{
     }
 
     addItem(item) {
-        let obj = { id: this.state.id, description: item.description, finished: item.finished}
+        let obj = { id: uuid(), description: item.description, finished: item.finished}
+        
+        const todos = this.state.todos.concat(obj);
         this.setState({
-            todos: this.state.todos.concat(obj),
+            todos: todos,
             id: this.state.id+1
         });
+        localStorage.setItem("todos", JSON.stringify(todos));
     }
 
     arrayIndex(id){
@@ -95,10 +94,6 @@ class TodoList extends React.Component{
     render(){
         return(
             <div className="todo-list">
-                {/*<form className="" onSubmit={this.onSubmit} >
-                    <input value={this.state.description} onChange={this.onChange} />
-                    <button>Submit</button>
-                </form>*/}
                 <h1>Todo List</h1>
                 <AddTodoItem id={this.state.id} addItem={this.addItem} />
                 <div className="todo-items">  {
