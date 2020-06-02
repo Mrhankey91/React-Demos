@@ -90,15 +90,24 @@ h1, p{
     display: inline-block;
     margin: 20px;
     text-decoration: none;
+    position: relative;
 }
 .product-item .title, .product-page .name{
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin: 0;
 }
 .product-page .description{
     font-size: 1.4rem;
+    margin: 0;
 }
 .product-item .price, .product-page .price{
-    font-size: 2rem;
+    font-size: 1.4rem;
+    margin: 0;
+}
+.product-item .image{
+    width: 50%;
+    height: auto;
+    padding-top: 20px;
 }
 .product-item .addcart, .product-page .addcart{
     border-radius: 10px;
@@ -111,6 +120,24 @@ h1, p{
 }
 .product-item .addcart:hover{
     background-color: $color-5;
+}
+.product-page .image{
+    width: 40%;
+    margin: 50px;
+}
+.product-page .container{
+    background: $color-3;
+    padding: 20px;
+    width: fit-content;
+    margin: auto;
+    border-radius: 10px;
+}
+.product-page .container .name{
+    margin-bottom: 20px;
+}
+.product-page .addcart{
+    margin-top: 20px;
+    background: $color-2;
 }
 .search-bar{
     position: relative;
@@ -155,7 +182,7 @@ h1, p{
     display: inline;
 }
 .shoppingcart-item{
-    width: 600px;
+    width: 90%;
     background-color: $color-2;
     border-radius: 5px;
     margin: 10px auto;
@@ -193,4 +220,25 @@ h1, p{
     border: none;
     height: 40px;
     width: 40px;
+}
+
+@media screen and (max-width: 600px) {
+    .search-bar{
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .header-menu-category{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .shoppingcart-item .name{
+        font-size: 1rem;
+    }
+    .shoppingcart-item .price{
+        font-size: 1rem;
+    }
 }

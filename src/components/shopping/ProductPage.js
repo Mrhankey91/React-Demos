@@ -6,10 +6,13 @@ const ProductPage = ({match, getProduct, addToCart}) =>{
 
     return(
         <div className="product-page">
-            <h1 className="name">{product.name}</h1>
-            <p className="description">{product.description}</p>
-            <p className="price">${product.price}</p>
-            <button className="addcart" onClick={() => addToCart(product.id, match.params.cid)}>Add to cart</button>
+            <img className="image" src={"../../../product-image/"+product.productimage}></img>
+            <div className="container">
+                <h1 className="name">{product.name}</h1>
+                <p className="description">{product.description}</p>
+                <p className="price">${product.price}</p>
+                <button className="addcart" onClick={() => addToCart(product.id, match.params.cid)}>Add to cart</button>
+            </div>
         </div>
     );
 }

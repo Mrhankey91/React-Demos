@@ -12,11 +12,31 @@ const Shop = () => {
     var [id, setID] = useState(0);
     var [shoppingCartItemCount, setShoppingCartItemCount] = useState(0);
     var [cart, setCart] = useState([]);
+    const api = "https://api.vriens.me/v1/shop/";
+
+    const getCategories = () =>{
+        let data = fetch(api + "categories")
+            .then(res => res.json()
+            .then((resp) =>{
+                return resp;
+            })
+        );
+    }
 
     const getCategory = (id) =>{
+        /*let data = fetch(api + "category/" + id)
+            .then(res => res.json()
+            .then((resp) =>{
+                return resp;
+            })
+        );
+        const response = await fetch(api + "category/" + id);
+        return (await response.json());*/
+
         for(var i = 0; i< itemsData.categories.length; ++i){
-            if(itemsData.categories[i].id === id)
+            if(itemsData.categories[i].id === id){
                 return itemsData.categories[i];
+            }
         }
         return null;
     }

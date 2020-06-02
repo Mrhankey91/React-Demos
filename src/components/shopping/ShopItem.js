@@ -6,6 +6,7 @@ const ShopItem = ({item, categoryID, addToCart}) =>{
 
     return(
         <Link className="product-item" to={"/shop/product/"+categoryID+"/"+item.id}>
+            <img className="image" src={"../../../product-image/"+item.productimage}></img>
             <h1 className="title">{item.name}</h1>
             <p className="price">${item.price}</p>
             {/*<button className="addcart" onClick={() => addToCart(item.id, categoryID)}>Add to cart</button>*/}
